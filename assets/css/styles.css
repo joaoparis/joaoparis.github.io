@@ -8,6 +8,7 @@
   --hue-color: 415;
   --first-color: hsl(var(--hue-color), 48%, 60%);
   --second-color: hsl(var(--hue-color), 30%, 12%);
+  --menu-backgorund-color: #00000;
   --footer-backgorund-color: #00000;
   --footer-color: #FFFFF;
   /*===== Fuente y tipografia =====*/
@@ -55,6 +56,7 @@ body {
   --second-color: #FFFFFF;
   --footer-backgorund-color: #07060a;
   --footer-color: #FFFFFF;
+  --menu-backgorund-color: #07060a;
 }
 
 .light-theme {
@@ -65,6 +67,7 @@ body {
   color: var(--second-color); 
   --footer-backgorund-color: #0d0b13;
   --footer-color: #FFFFFF;
+  --menu-backgorund-color: #707065;
 }
 
 .theme-toggle-btn {
@@ -155,10 +158,11 @@ img {
     position: fixed;
     top: var(--header-height);
     right: -100%;
-    width: 80%;
+    width: 35%;
     height: 100%;
     padding: 2rem;
-    background-color: inherit;
+    text-align: end;
+    background-color: var(--menu-backgorund-color);
     transition: 0.5s;
   }
 }
@@ -237,8 +241,8 @@ img {
 }
 .home__img {
   position: absolute;
-  right: 0;
-  top: 10rem;
+  right: 0rem;
+  top: 25rem;
   width: 260px;
 }
 .home__blob {
@@ -376,7 +380,7 @@ img {
   color: var(--footer-color);
   text-align: center;
   font-weight: var(--font-semi);
-  padding: 2rem 0;
+  padding: 2rem 2rem;
 }
 .footer__title {
   font-size: 2rem;
