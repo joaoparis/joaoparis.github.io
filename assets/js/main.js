@@ -16,7 +16,6 @@ const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -29,7 +28,7 @@ const scrollActive = () =>{
 
   sections.forEach(current =>{
         const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
+              sectionTop = current.offsetTop -58,
               sectionId = current.getAttribute('id'),
               sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
         
@@ -54,4 +53,21 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data',{interval: 200}); 
+
+/*===== THEME TOGGLER =====*/
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  document.body.classList.toggle('light-theme');
+
+  const icon = themeToggle.querySelector('i');
+  if (document.body.classList.contains('light-theme')) {
+    icon.classList.remove('bx-sun');
+    icon.classList.add('bx-moon');
+  } else {
+    icon.classList.remove('bx-moon');
+    icon.classList.add('bx-sun');
+  }
+});

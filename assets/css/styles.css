@@ -5,11 +5,11 @@
   --header-height: 3rem;
   --font-semi: 600;
   /*===== Colores =====*/
-  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-  /* HSL color mode */
   --hue-color: 415;
   --first-color: hsl(var(--hue-color), 48%, 60%);
   --second-color: hsl(var(--hue-color), 30%, 12%);
+  --footer-backgorund-color: #00000;
+  --footer-color: #FFFFF;
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -44,10 +44,36 @@ html {
 }
 
 body {
-  margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+}
+
+.dark-theme {
+  background-color: #0d0c13;
+  color: #FFFFFF;       
+  --second-color: #FFFFFF;
+  --footer-backgorund-color: #07060a;
+  --footer-color: #FFFFFF;
+}
+
+.light-theme {
+  --hue-color: 415;
+  --first-color: hsl(var(--hue-color), 48%, 60%);
+  --second-color: hsl(var(--hue-color), 30%, 12%);
+  background-color: #FFFFFF;
+  color: var(--second-color); 
+  --footer-backgorund-color: #0d0b13;
+  --footer-color: #FFFFFF;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit; 
+  font-size: 1.25rem; 
+  margin-left: 1rem; 
 }
 
 h1, h2, p {
@@ -93,8 +119,10 @@ img {
 
 .section {
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
 }
+
 
 /*===== LAYOUT =====*/
 .bd-grid {
@@ -110,7 +138,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: inherit;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -130,7 +158,7 @@ img {
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--second-color);
+    background-color: inherit;
     transition: 0.5s;
   }
 }
@@ -151,7 +179,7 @@ img {
   height: 0.18rem;
   left: 0;
   top: 2rem;
-  background-color: var(--first-color);
+  background-color: inherit;
 }
 .nav__logo {
   color: var(--second-color);
@@ -162,7 +190,6 @@ img {
   cursor: pointer;
 }
 
-/*Active menu*/
 .active-link::after {
   position: absolute;
   content: "";
@@ -180,6 +207,7 @@ img {
 
 /*===== HOME =====*/
 .home {
+  min-height: 100vh;
   position: relative;
   row-gap: 5rem;
   padding: 4rem 0 5rem;
@@ -210,7 +238,7 @@ img {
 .home__img {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 10rem;
   width: 260px;
 }
 .home__blob {
@@ -220,7 +248,7 @@ img {
   width: 360px;
 }
 
-/*BUTTONS*/
+/*===== BUTTONS =====*/
 .button {
   display: inline-block;
   background-color: var(--first-color);
@@ -344,8 +372,8 @@ img {
 
 /* ===== FOOTER =====*/
 .footer {
-  background-color: var(--second-color);
-  color: #fff;
+  background-color: var(--footer-backgorund-color);
+  color: var(--footer-color);
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
